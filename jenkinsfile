@@ -8,7 +8,7 @@ pipeline {
     stages{
         stage('Cloning'){
             steps {
-                git "https://github.com/AlexRuMath/PDRIS_3.git"
+                git "https://github.com/AlexRuMath/PDRIS_3.git/refs/heads/main"
             }
         }
 
