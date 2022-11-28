@@ -7,8 +7,20 @@ pipeline {
 
     stages{
         stage('Cloning'){
-            steps{
-                git "https"
+            steps {
+                git "https://github.com/AlexRuMath/PDRIS_3.git"
+            }
+        }
+
+        stage("Install dependencies"){
+            steps {
+                sh 'npm install'
+            }
+        }
+
+        stage("Test"){
+            steps {
+                sh 'node test'
             }
         }
     }
