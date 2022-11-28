@@ -24,5 +24,17 @@ pipeline {
                 sh 'npm test'
             }
         }
+
+        stage("Build docker"){
+            steps {
+                sh 'docker build -t alexrumath/app .'
+            }
+        }
+
+        stage("Run container"){
+            steps {
+                sh 'docker run -p 3000:3000 alexrumath/app'
+            }
+        }
     }
 }
