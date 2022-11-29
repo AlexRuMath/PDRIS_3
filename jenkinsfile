@@ -25,15 +25,9 @@ pipeline {
             }
         }
 
-        stage("Build docker"){
+        stage("Deploy"){
             steps {
-                sh 'docker build -t alexrumath/app .'
-            }
-        }
-
-        stage("Run container"){
-            steps {
-                sh 'docker run -p 3000:3000 alexrumath/app'
+                sh 'sh deploy.sh'
             }
         }
     }
